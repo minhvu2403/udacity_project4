@@ -7,6 +7,7 @@
 docker_path=vuvm1
 
 # Step 2
+# Create a deployment in Kubernetes with the specified image
 kubectl create deploy project-ml-microservice-kubernetes --image="$docker_path/project-ml:v1.0.2"
 
 
