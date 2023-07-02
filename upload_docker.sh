@@ -4,15 +4,16 @@
 # Assumes that an image is built via `run_docker.sh`
 
 # Step 1:
-# Create docker_path
+# Create docker_path (username)
 docker_path=vuvm1
 
 
 # Step 2:  
 # Authenticate & tag
 # echo "Docker ID and Image: $docker_path"
-# echo "$MY_PASSWORD" | docker login --username $docker_path --password-stdin $MY_PASSWORD
 docker login
+
+# Check if the image is already tagged and remove it if necessary
 image_tagged=$(docker image list --filter=reference="$docker_path/project-ml" | grep 'project-ml' | xargs)
 if [[ -n $image_tagged ]]; then
   echo "Image already tagged, remove the tagged image."
@@ -21,12 +22,18 @@ if [[ -n $image_tagged ]]; then
   docker image remove --force "$name":"$tag"
 fi
 
+# Get information about the image by substring 
 image_info=$(docker image list | grep 'project-ml' | xargs)
 image_name=$(echo "$image_info" | cut -f 1 -d " ")
 image_tag=$(echo "$image_info" | cut -f 2 -d " ")
+
+# Tag the image with the specified repository and tag
 docker image tag "$image_name:$image_tag" "$docker_path/$image_name:$image_tag"
+
+# List the tagged image
 docker image list --filter=reference="$docker_path/project-ml"
 
 # Step 3:
 # Push image to a docker repository
+# Push the tagged image to the Docker repository
 docker image push "$docker_path/project-ml:$image_tag"
