@@ -1,8 +1,6 @@
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/Yavooor/DevOps/tree/master.svg?style=svg)]([https://dl.circleci.com/status-badge/redirect/gh/Yavooor/DevOps/tree/master](https://dl.circleci.com/status-badge/redirect/gh/minhvu2403/udacity_project4/tree/main))
 
 
-<include a CircleCI status badge, here>
-
 ## Project Overview
 
 In this project, you will apply the skills you have acquired in this course to operationalize a Machine Learning Microservice API. 
