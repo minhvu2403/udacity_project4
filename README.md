@@ -1,4 +1,4 @@
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Yavooor/DevOps/tree/master.svg?style=svg)]([https://dl.circleci.com/status-badge/redirect/gh/Yavooor/DevOps/tree/master](https://dl.circleci.com/status-badge/redirect/gh/minhvu2403/udacity_project4/tree/main))
+
 
 
 ## Project Overview
